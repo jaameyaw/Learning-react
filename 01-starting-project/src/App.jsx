@@ -2,8 +2,11 @@ import { CORE_CONCEPTS } from './data';
 import Header from './components/Header';
 import CoreConcepts from './components/CoreConcepts';
 import TabButton from './components/TabButton';
+import { useState } from 'react';
 
 function App() {
+
+  const [tabContent, settabContent] = useState('components')
 
   function handleSelect(selectedButton) {
     console.log(selectedButton);
