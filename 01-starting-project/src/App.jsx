@@ -7,11 +7,12 @@ import { EXAMPLES } from './data';
 
 function App() {
 
-  const [tabContent, settabContent] = useState('components')
+  const [tabContent, settabContent] = useState()
 
   function handleSelect(selectedButton) {
     settabContent(selectedButton);
   }
+
 
   return (
     <div>
@@ -35,19 +36,20 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => {handleSelect('components')}}>Components</TabButton>
-            <TabButton onSelect={() => {handleSelect('jsx')}}>JSX</TabButton>
-            <TabButton onSelect={() => {handleSelect('props')}}>Props</TabButton>
-            <TabButton onSelect={() => {handleSelect('state')}}>State</TabButton>
+            <TabButton isSelected={tabContent === 'components'} onSelect={() => {handleSelect('components')}}>Components</TabButton>
+            <TabButton isSelected={tabContent === 'jsx'} onSelect={() => {handleSelect('jsx')}}>JSX</TabButton>
+            <TabButton isSelected={tabContent === 'props'} onSelect={() => {handleSelect('props')}}>Props</TabButton>
+            <TabButton isSelected={tabContent === 'state'} onSelect={() => {handleSelect('state')}}>State</TabButton>
           </menu>
           
+          {!tabContent ? <p>Please select one of the buttons</p> : 
           <div id="tab-content">
             <h3>{ EXAMPLES[tabContent].title}</h3>
             <p>{ EXAMPLES[tabContent].description}</p>
             <pre>
               <code>{EXAMPLES[tabContent].code}</code>
             </pre>
-          </div>
+          </div>}
         </section>
 
       </main>
