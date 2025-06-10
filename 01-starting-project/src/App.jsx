@@ -21,15 +21,11 @@ function App() {
         <h2>Core Concepts</h2>
         <section id="core-concepts">
           <ul>
-            <CoreConcepts {...CORE_CONCEPTS[0]}
-            />
-            <CoreConcepts {...CORE_CONCEPTS[1]}
-            />
-            <CoreConcepts {...CORE_CONCEPTS[2]}           
-            />
-            <CoreConcepts {...CORE_CONCEPTS[3]}
-            />
-            
+            {CORE_CONCEPTS.map(({id, image, title, description}) => (
+            <CoreConcepts key={id} 
+            image={image} 
+            title={title} 
+            description={description} />))}
           </ul>
         </section>
 
@@ -42,8 +38,8 @@ function App() {
             <TabButton isSelected={tabContent === 'state'} onSelect={() => {handleSelect('state')}}>State</TabButton>
           </menu>
           
-          {!tabContent ? <p>Please select one of the buttons</p> : 
-          <div id="tab-content">
+          {!tabContent? <p>Please select one of the buttons</p> 
+          :<div id="tab-content">
             <h3>{ EXAMPLES[tabContent].title}</h3>
             <p>{ EXAMPLES[tabContent].description}</p>
             <pre>
