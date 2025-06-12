@@ -2,6 +2,7 @@ import { CORE_CONCEPTS } from './data';
 import Header from './components/Header';
 import CoreConcepts from './components/CoreConcepts';
 import TabButton from './components/TabButton';
+import Section from './components/Section'
 import { useState } from 'react';
 import { EXAMPLES } from './data';
 
