@@ -29,14 +29,16 @@ function App() {
         </section>
 
         <Section id="examples" title='Examples'>
-
-          <TabsWrapper buttons={
-            <>
+          
+          <TabsWrapper 
+            ButtonsContainer="menu"
+            buttons={
+              <>
               <TabButton isSelected={tabContent === 'components'} onClick={() => {handleSelect('components')}}>Components</TabButton>
               <TabButton isSelected={tabContent === 'jsx'} onClick={() => {handleSelect('jsx')}}>JSX</TabButton>
               <TabButton isSelected={tabContent === 'props'} onClick={() => {handleSelect('props')}}>Props</TabButton>
               <TabButton isSelected={tabContent === 'state'} onClick={() => {handleSelect('state')}}>State</TabButton>
-            </>
+              </>
           } />
           
           {!tabContent? <p>Please select one of the buttons</p> 
