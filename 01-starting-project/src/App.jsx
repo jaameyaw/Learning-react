@@ -31,7 +31,6 @@ function App() {
         <Section id="examples" title='Examples'>
           
           <TabsWrapper 
-            ButtonsContainer="menu"
             buttons={
               <>
               <TabButton isSelected={tabContent === 'components'} onClick={() => {handleSelect('components')}}>Components</TabButton>
