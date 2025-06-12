@@ -1,6 +1,6 @@
 import { Children } from "react";
 
-export default function Tabs({buttons, children, ButtonsContainer}) {
+export default function Tabs({buttons, children, ButtonsContainer= "menu"}) {
     return (
         <>
             <ButtonsContainer>{buttons}</ButtonsContainer>
