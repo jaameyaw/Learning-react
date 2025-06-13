@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function Player({name, symbol}) {
 
     const [isEditing, setIsEditing] = useState(false)
-    function isClicked() {
+    function handleEditClick() {
         setIsEditing(true)
     }
 
@@ -14,7 +14,7 @@ export default function Player({name, symbol}) {
               {isEditing? <input type="text" />: <span className="player-name">{name}</span>}
               <span className="player-symbol">{symbol}</span>
             </span>
-            <button onClick={isClicked}>Edit</button>
+            <button onClick={handleEditClick}>Edit</button>
         </li>
     )
 }
