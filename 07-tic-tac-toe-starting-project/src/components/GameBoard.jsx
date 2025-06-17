@@ -7,7 +7,7 @@ const initialGameBoard = [
 ]
 
 
-export default function GameBoard({onSelectSquare}) {
+export default function GameBoard({onSelectSquare, activePlayerSymbol}) {
     const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
     function handlePlayerSymbolBtn(rowIndex, colIndex) {
