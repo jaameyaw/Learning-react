@@ -1,9 +1,14 @@
+import { useState } from "react";
 import Player from "./components/Player";
 import GameBoard from "./components/GameBoard";
 
 
 function App() {
-  
+  const [activePlayer, setActivePlayer] = useState('X')
+
+  function handleSquareSelect () {
+    setActivePlayer((curActivePlayer) => curActivePlayer === 'X'?'O':'X')
+  }
 
   return (
     <main>
