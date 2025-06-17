@@ -7,7 +7,7 @@ function App() {
   const [activePlayer, setActivePlayer] = useState('X')
 
   function handleSquareSelect () {
-    setActivePlayer((curActivePlayer) => curActivePlayer === 'X'?'O':'X')
+    setActivePlayer((curActivePlayer) => curActivePlayer === 'X' ? 'O':'X')
   }
 
   return (
