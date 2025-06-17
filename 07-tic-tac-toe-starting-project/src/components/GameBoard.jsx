@@ -7,7 +7,7 @@ const initialGameBoard = [
 ]
 
 
-export default function GameBoard() {
+export default function GameBoard({onSelectSquare}) {
     const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
     function handlePlayerSymbolBtn(rowIndex, colIndex) {
@@ -16,7 +16,11 @@ export default function GameBoard() {
             updatedBoard[rowIndex][colIndex] = 'X';
             return updatedBoard
         })
+
+        onSelectSquare(); 
+        
     }
+
     return (
         <ol id="game-board">
             {gameBoard.map((row, rowIndex) => 
