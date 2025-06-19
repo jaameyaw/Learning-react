@@ -18,6 +18,8 @@ function App() {
   const [gameTurns, setGameTurns] = useState([])
   // const [activePlayer, setActivePlayer] = useState('X')
   
+  const activePlayer = derivedActivePlayer(gameTurns); 
+
 
   function handleSquareSelect (rowIndex, colIndex) {
     setActivePlayer((curActivePlayer) => curActivePlayer === 'X' ? 'O':'X')
