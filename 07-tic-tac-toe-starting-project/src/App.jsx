@@ -22,13 +22,10 @@ function App() {
 
 
   function handleSquareSelect (rowIndex, colIndex) {
-    setActivePlayer((curActivePlayer) => curActivePlayer === 'X' ? 'O':'X')
-    setGameTurns(prevTurns => {
-      let currentPlayer = 'X';
+    // setActivePlayer((curActivePlayer) => curActivePlayer === 'X' ? 'O':'X')
 
-      if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
-        currentPlayer = 'O';
-      }
+    setGameTurns(prevTurns => {
+      const currentPlayer = derivedActivePlayer(prevTurns);
 
       const updatedTurns = 
       [{square: { row: rowIndex, col: colIndex }, player: currentPlayer}, 
