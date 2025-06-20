@@ -4,6 +4,12 @@ import GameBoard from "./components/GameBoard";
 import Log from "./components/Log";
 import { WINNING_COMBINATIONS } from "./winning-combinations";
 
+const initialGameBoard = [
+    [null, null, null],
+    [null, null, null],
+    [null, null, null]
+]
+
 function derivedActivePlayer(gameTurns) {
   let currentPlayer = 'X';
 
@@ -21,6 +27,7 @@ function App() {
   
   const activePlayer = derivedActivePlayer(gameTurns); 
 
+  let gameBoard = initialGameBoard;
 
   function handleSquareSelect (rowIndex, colIndex) {
     // setActivePlayer((curActivePlayer) => curActivePlayer === 'X' ? 'O':'X')
