@@ -52,6 +52,11 @@ function App() {
     }
   }
 
+  function handleRestartGame() {
+    setGameTurns([]);
+  }
+
+
   const hasDraw = gameTurns.length === 9 && !winner;
 
   function handleSquareSelect (rowIndex, colIndex) {
@@ -75,7 +80,9 @@ function App() {
           <Player initialName="Player 1" symbol="X" isActive={activePlayer === 'X'}/>
           <Player initialName="Player 2" symbol="O" isActive={activePlayer === 'O'}/>
         </ol>
-        {(winner || hasDraw)  && <GameOver winner={winner}/>}
+        {(winner || hasDraw)  && 
+        <GameOver winner={winner} onRematch={handleRestartGame}/>}
+
         <GameBoard 
         onSelectSquare={handleSquareSelect} 
         board={gameBoard}/>
