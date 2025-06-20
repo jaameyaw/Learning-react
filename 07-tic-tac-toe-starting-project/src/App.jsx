@@ -75,7 +75,7 @@ function App() {
         {winner && <p>You won, {winner}!</p>}
         <GameBoard 
         onSelectSquare={handleSquareSelect} 
-        turns={gameTurns}/>
+        board={gameBoard}/>
 
       </div>
       <Log turns={gameTurns}/>
