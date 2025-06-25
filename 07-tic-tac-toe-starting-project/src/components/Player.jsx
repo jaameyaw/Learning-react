@@ -7,6 +7,10 @@ export default function Player({initialName, symbol, isActive, onChangeName}) {
 
     function handleEditClick() {
         setIsEditing((prev) => !prev);
+        
+        if (isEditing) {
+            onChangeName(symbol, playerName);
+        }
     }
 
     function handleInputValue(e) {
