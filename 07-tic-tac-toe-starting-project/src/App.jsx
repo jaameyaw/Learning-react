@@ -53,7 +53,7 @@ function App() {
         firstSquareSymbol === secondSquareSymbol && 
         firstSquareSymbol === thirdSquareSymbol) 
         {
-      winner = firstSquareSymbol;
+      winner = players[firstSquareSymbol];
     }
   }
 
